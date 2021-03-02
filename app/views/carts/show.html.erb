@@ -3,7 +3,7 @@
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-
+  <% if enhanced_cart.length > 0 %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -30,6 +30,7 @@
         </tr>
       </tfoot>
     </table>
+    
   </div>
 
   <div class="row">
@@ -48,5 +49,7 @@
       <% end %>
     </div>
   </div>
-
+  <% else %>
+    <%= "Looks like you don't you don't have anything in your cart. Let's add something first!" %>
+  <% end %>
 </section>
