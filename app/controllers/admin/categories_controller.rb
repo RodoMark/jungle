@@ -1,4 +1,4 @@
-class Admin::ProductsController < ApplicationController
+class Admin::CategoriesController < ApplicationController
 
   http_basic_authenticate_with name: ENV["JUNGLE_NAME"], password: ENV["JUNGLE_PASSWORD"]
 
