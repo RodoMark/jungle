@@ -1,4 +1,4 @@
-<section class="admin-products-index">
+<section class="admin-categories-index">
 
   <header class="page-header">
     <h1>Admin &raquo; All Categories</h1>
@@ -11,11 +11,21 @@
   <div class="panel panel-default products">
 
     <table class="table table-bordered">
-        <td>
-        Category
-        </td>
-  
-
-  </div>
+    <thead>
+        <tr>
+          <th colspan="5">Category</th>
+          
+     </thead>
+     <tbody>    
+        <% @categories.each do |category| %>
+          <tr>
+            <td>
+              <%= category.name %>
+            </td>
+          </tr>
+        <% end %>
+        
+      </tbody>
+  </table>
 
 </section>
