@@ -1,9 +1,9 @@
 <h1>Admin Dashboard</h1>
 <table class="table table-bordered">
   <td>Products</td>
-  <td><%= link_to "Products Index", "/admin/products", class: "btn btn-default" %></td>
   <td><%= @products_count %></td>
+  <td><%= link_to "Products Index", "/admin/products", class: "btn btn-info" %></td>
   <td>Categories</td>
   <td><%= @categories_count %></td>
-  <td><%= link_to "Categories Index", "/admin/categories", class: "btn btn-default" %></td>
+  <td><%= link_to "Categories Index", "/admin/categories", class: "btn btn-info" %></td>
 </table>
