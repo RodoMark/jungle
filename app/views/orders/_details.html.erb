@@ -1,8 +1,14 @@
 <tr>
-  <td>
-    <%= Product.find_by(id: product).name %>
+  <td colspan="2">
+    <%= item.product.name %>
   </td>
   <td>
-    <%= Product.find_by(id: product).price %>
+    <%= humanized_money_with_symbol item.product.price_cents / 100 %>
+  </td>
+  <td>
+    <%= item.quantity %>
+  </td>
+  <td>
+    <%= humanized_money_with_symbol item.quantity * item.product.price_cents / 100 %>
   </td>
 <tr>
