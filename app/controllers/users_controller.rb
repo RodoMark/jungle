@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     else
       redirect_to '/register'
     end
+  end
 
 private
 
