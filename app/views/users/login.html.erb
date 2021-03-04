@@ -3,19 +3,9 @@
 
 
 <%= form_for :user, url: login_users_path do |f| %>
-  <% if :user.object.errors.any? %>
-    <div class="alert alert-danger">
-      <strong>The following errors prevented saving:</strong>
-      <ul>
-        <% f.object.errors.full_messages.each do |error| %>
-          <li><%= error %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  Email: <%= f.text_field :email %><br>
-  Password: <%= f.password_field :password %><br>
-  <%= f.submit "Continue" %>
+  Email: <%= f.text_field :email, class: "form-group" %><br>
+  Password: <%= f.password_field :password, class: "form-group" %><br>
+  <%= f.submit "Continue", class: "btn btn-primary" %>
 
 <% end %>

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resource :users, controller: 'users', only: [:register, :login] do
     get :register
     get :login
-    post :register, to: "users#do_register"
+    post :register, to: "users#new"
     post :login, to: "sessions#create"
     post :logout, to: "sessions#destroy"
   end

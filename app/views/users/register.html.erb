@@ -2,22 +2,11 @@
 
 
 <%= form_for :user, url: register_users_path do |f| %>
-  <% if @user.errors.any? %>
-    <div class="alert alert-danger">
-      <strong>The following errors prevented saving:</strong>
-      <ul>
-        <% @user.errors.full_messages.each do |error| %>
-          <li><%= error %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  First Name: <%= f.text_field :first_name %><br>
-  Last Name: <%= f.text_field :last_name %><br>
-  Email: <%= f.text_field :email %><br>
-  Password: <%= f.password_field :password %><br>
-  Password Confirmation: <%= f.password_field :password_confirmation %><br>
-  <%= f.submit "Create your Jungle account" %>
+  First Name: <%= f.text_field :first_name, class: "form-group" %><br>
+  Last Name: <%= f.text_field :last_name, class: "form-group" %><br>
+  Email: <%= f.text_field :email, class: "form-group" %><br>
+  Password: <%= f.password_field :password, class: "form-group" %><br>
+  Password Confirmation: <%= f.password_field :password_confirmation, class: "form-group" %><br>
+  <%= f.submit "Create your Jungle account", class: "btn btn-primary" %>
 
 <% end %>
