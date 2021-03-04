@@ -1,19 +1,18 @@
 class UsersController < ApplicationController
   def new
-  end
+    @user = User.new
+ end
 
   def do_register
-    user = User.new(user_params)
-    if user.save
-      session[:user_id] = user.id
+    @user = User.new(user_params)
+    
+    if @user.save
+      session[:user_id] = @user.id
       redirect_to '/'
     else
-      redirect_to '/users/register'
+      render :register_users
     end
   end
-
-  
-
 
 private
 

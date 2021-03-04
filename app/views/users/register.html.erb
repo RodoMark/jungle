@@ -1,6 +1,17 @@
 <h1>Create account</h1>
 
+
 <%= form_for :user, url: register_users_path do |f| %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger">
+      <strong>The following errors prevented saving:</strong>
+      <ul>
+        <% @user.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   First Name: <%= f.text_field :first_name %><br>
   Last Name: <%= f.text_field :last_name %><br>

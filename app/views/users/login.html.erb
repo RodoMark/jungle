@@ -1,6 +1,18 @@
 <h1>Login to your account</h1>
 
+
+
 <%= form_for :user, url: login_users_path do |f| %>
+  <% if :user.object.errors.any? %>
+    <div class="alert alert-danger">
+      <strong>The following errors prevented saving:</strong>
+      <ul>
+        <% f.object.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   Email: <%= f.text_field :email %><br>
   Password: <%= f.password_field :password %><br>
