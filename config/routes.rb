@@ -11,8 +11,8 @@ Rails.application.routes.draw do
     get :register
     get :login
     post :register, to: "users#do_register"
-    post :login, to: "users#do_login"
-    post :logout, only: [:destroy]
+    post :login, to: "session#create"
+    post :logout, to: "session#destroy"
   end
 
   resource :cart, only: [:show] do
