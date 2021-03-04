@@ -1,0 +1,38 @@
+<section class="admin-sales-index">
+
+  <header class="page-header">
+    <h1>Admin &raquo; All Sales</h1>
+  </header>
+
+  <div class="well">
+  <table>
+        <tr>   
+            <%= form_for [:admin, @sale] do |f| %>
+                <%= f.label "Enter name for a new sale:" %>
+                <%= f.text_field :name, class: 'form-control' %><br>
+              
+                <%= f.submit 'Create Sale' %>
+              
+            <% end %>
+        </tr>
+      </table>
+  </div>
+
+  <div class="panel panel-default sales">
+
+    <table class="table table-bordered">
+    <thead>
+        <tr>
+          <th>Sale</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Discount Amount</th>
+          
+     </thead>
+     <tbody>    
+        <%= render @sales %>
+      </tbody>
+      
+  </table>
+
+</section>
