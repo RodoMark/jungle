@@ -48,12 +48,16 @@
         </li>
     <% if current_user %>
         <li>    
-          Signed in as <%= current_user.first_name %>
+          <a>
+            <span class="text-info">Signed in as <%= current_user.first_name %></span>
+          </a>
         </li>
         <li>
-        <%= form_for :user, url: logout_users_path do |f| %>
-          <%= f.submit "Logout" %>
-        <% end %>
+            <a>
+            <%= form_for :user, url: logout_users_path do |f| %>
+                <%= f.submit "Logout"%>
+            <% end %>  
+            </a>
         </li>
       <% else %>
         <li>
@@ -64,8 +68,6 @@
           <%= link_to 'Register', register_users_path, class: "btn btn-outline-info" %>
         </li>
       <% end %>
-     
-      </ul>
     </div>
   </div>
 </nav>
