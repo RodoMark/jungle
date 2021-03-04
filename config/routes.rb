@@ -7,6 +7,13 @@ Rails.application.routes.draw do
   
   resource :about, controller: 'about', only: [:show]
 
+  resource :users, controller: 'users', only: [:register, :login] do
+    get :register
+    get :login
+    post :register
+    post :login
+  end
+
   resource :cart, only: [:show] do
     post   :add_item
     post   :remove_item
