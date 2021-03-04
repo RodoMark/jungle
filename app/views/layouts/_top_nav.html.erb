@@ -48,15 +48,20 @@
         </li>
     <% if current_user %>
         <li>    
-          Signed in as <%= current_user.name %> | <%= link_to "Logout", 'users/logout', class: "btn btn-outline-info" %>
+          Signed in as <%= current_user.first_name %>
+        </li>
+        <li>
+        <%= form_for :user, url: logout_users_path do |f| %>
+          <%= f.submit "Logout" %>
+        <% end %>
         </li>
       <% else %>
         <li>
-          <%= link_to 'Login', 'users/login', class: "btn btn-outline-primary" %>
+          <%= link_to 'Login', login_users_path, class: "btn btn-outline-primary" %>
         </li>
         
         <li>
-          <%= link_to 'Register', 'users/register', class: "btn btn-outline-info" %>
+          <%= link_to 'Register', register_users_path, class: "btn btn-outline-info" %>
         </li>
       <% end %>
      

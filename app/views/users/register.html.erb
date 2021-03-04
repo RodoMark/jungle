@@ -1,6 +1,6 @@
 <h1>Create account</h1>
 
-<%= form_for :user, url: '/users/register' do |f| %>
+<%= form_for :user, url: register_users_path do |f| %>
 
   First Name: <%= f.text_field :first_name %><br>
   Last Name: <%= f.text_field :last_name %><br>
