@@ -43,7 +43,8 @@ RSpec.feature "UserLogins", type: :feature, js: true do
 
    #VERIFY
    expect(page).to have_css 'article.product', count: 10
-   
+   expect(page).to have_css 'a#logout'
+
    save_screenshot
    
   end
