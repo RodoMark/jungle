@@ -34,14 +34,16 @@ RSpec.describe User, type: :model do
     user = User.create(first_name: "First", last_name: "Last", email: "thisemail@hasnotbeentaken.com", password: "password", password_confirmation: "password")
 
     it 'should return nil if password is wrong' do
-    expect(user.authenticate_with_credentials(user.email, "wrongpassword")).to eq(nil)
+    expect(user.authenticate_with_credentials("thisemail@hasnotbeentaken.com", "wrongpassword")).to eq(nil)
     end
 
     it 'should return user even if the entered email has whitespace' do
-      expect(user.authenticate_with_credentials("  thisemail@hasnotbeentaken.com   ", "wrongpassword")).to eq(nil)
-      end
+      expect(user.authenticate_with_credentials("  thisemail@hasnotbeentaken.com   ", user.password)).not_to eq(nil)
+    end
 
-    
+    it 'should return user even if the entered email was oDDly CAseD' do
+      expect(user.authenticate_with_credentials("  THISemail@hasNOTbeentaken.cOM   ", user.password)).not_to eq(nil)
+    end
 
   end
 
