@@ -16,14 +16,16 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
       )
   end
 
-  scenario "They see all products" do
+  scenario "They see product with id: 1" do
     # ACT
-    visit "/products/1"
-
+    visit root_path
+    find_link('Details').click
+    
     # DEBUG
     save_screenshot
 
     # VERIFY
+    expect(page).to have_css 'section.products-show'
     expect(page).to have_content @product.name
     expect(page).to have_content @product.description
     expect(page).to have_content @product.quantity
