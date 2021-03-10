@@ -2,6 +2,9 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+!["Browsing By Category"]()
+
+!["Checking Out A Cart"]()
 
 ## Setup
 
