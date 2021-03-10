@@ -2,9 +2,9 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
-!["Browsing By Category"]()
+!["Browsing By Category"](https://github.com/RodoMark/jungle/blob/master/public/images/Categories.png?raw=true)
 
-!["Checking Out A Cart"]()
+!["Checking Out A Cart"](https://github.com/RodoMark/jungle/blob/master/public/images/Checkout_Cart.png?raw=true)
 
 ## Setup
 
